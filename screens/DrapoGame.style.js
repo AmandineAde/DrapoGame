@@ -1,10 +1,13 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
+    keyboardContainer: {
+        flex: 1,
+    },
     container: {
-      flex: 1,
-      justifyContent: "center",
-      alignContent: "center"
+        flex: 1,
+        justifyContent: "center",
+        alignContent: "center"
     },
     button:{
         background:{
@@ -12,11 +15,13 @@ const styles = StyleSheet.create({
             borderRadius:5,
             paddingHorizontal:20,
             paddingVertical:10,
-            height:40,
+            minHeight:40,
+            alignSelf:"center"
         },
         text:{
             fontSize:25,
             color: "white",
+            alignSelf:"center",
         },
         textScore:{
             fontSize:20,
@@ -41,7 +46,7 @@ const styles = StyleSheet.create({
         alignSelf: "center"
     },
     input:{
-        height:40,
+        minHeight:40,
         minWidth:200,
         margin: 10,
         borderWidth: 1,
@@ -67,7 +72,7 @@ const styles = StyleSheet.create({
         flexDirection: "row", 
         minWidth:200,
         maxWidth: 100,
-        maxHeight:40
+        maxHeight:90
     }
 });
 

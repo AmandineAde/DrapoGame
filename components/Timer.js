@@ -8,13 +8,15 @@ function Timer(props){
   const id = useRef(null);
 
   const clear = () => {
+    console.log("clear")
     window.clearInterval(id.current); // On supprime le timer
     props.onFinish(); // Fait en sorte le compteur augmente
+    props.clearText();
     createInterval(); // On recrée un timer
   }
 
   function createInterval(){
-    setTimer(30);
+    setTimer(11);
     id.current = window.setInterval(() => {
       setTimer((time) => time - 1);
     }, 1000)
@@ -33,7 +35,7 @@ function Timer(props){
   return (
     <View style={styles.container}>
       <Text style={styles.text}>{timer} secondes</Text>
-      <Progress.Bar style={styles.progress} progress={(timer / 30)} width={200} />
+      <Progress.Bar style={styles.progress} progress={(timer / 11)} width={200} height={10}/>
     </View>
   );
 }

@@ -12,6 +12,7 @@ const styles = StyleSheet.create({
         fontWeight: "bold"
     },
     progress:{
+        height:10,
         alignSelf: "center"
     }
 });
