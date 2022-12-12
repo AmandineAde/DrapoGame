@@ -15,24 +15,21 @@ function DrapoGameScreen({ route, navigation }){
             style={styles.keyboardContainer}>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                 <View style={styles.container}>
-                        <ImageBackground source={require('../assets/wallpaper.jpg')} resizeMode="cover" style={styles.image} blurRadius={2}>
-                            <View 
-                            style={styles.drapoFlex}>
-                                <Text>{count}</Text>
-                                <Text>{data.length}</Text>
-                                { (count < data.length) ?
-                                
-                                    <RenderGame 
+                    <ImageBackground source={require('../assets/wallpaper.jpg')} resizeMode="cover" style={styles.image} blurRadius={2}>
+                        <View style={styles.drapoFlex}>
+                            { (count < data.length) ?
+                                <RenderGame 
                                     gameData={data}
                                     count={count}
-                                    onTimerFinish={() => setCount(count + 1)}
+                                    addCount={() => setCount(count + 1)}
                                     drapeau={data[count]}
-                                    /> : <FinishGame
+                                /> : 
+                                <FinishGame
                                     navigation={navigation}
-                                    />
-                                }
-                            </View>
-                        </ImageBackground>
+                                />
+                            }
+                        </View>
+                    </ImageBackground>
                 </View>
             </TouchableWithoutFeedback>
         </KeyboardAvoidingView>

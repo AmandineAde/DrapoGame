@@ -32,6 +32,9 @@ const styles = StyleSheet.create({
     fs21:{
         fontSize:21,
     },
+    fs18:{
+        fontSize:18,
+    },
     bold:{
         fontWeight:"bold"
     },
@@ -56,8 +59,10 @@ const styles = StyleSheet.create({
         borderRadius:5,
         
     },
-    textTitle:{
+    textCenter:{
         textAlign: "center",
+    },
+    textTitle:{
         fontWeight: "bold",
         color: "white"
     },
@@ -73,6 +78,18 @@ const styles = StyleSheet.create({
         minWidth:200,
         maxWidth: 100,
         maxHeight:90
+    },
+    textWhite:{
+        color:"white",
+    },
+    textShadow:{
+        textShadowColor: 'rgba(0, 0, 0, 0.75)',
+        textShadowOffset: {width: -1, height:2},
+        textShadowRadius: 10
+    },
+    error:{
+        color: "#F7EE7F",
+        marginBottom: 5,
     }
 });
 

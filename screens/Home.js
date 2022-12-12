@@ -3,10 +3,11 @@ import { View, Text, TouchableOpacity, ImageBackground } from 'react-native';
 import styles from "./Home.style.js"
 import axios from 'axios';
 import { useFocusEffect } from '@react-navigation/native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 //import { NavigationContainer } from '@react-navigation/native';
 
-function HomeScreen({ navigation }){
-
+function HomeScreen({ route, navigation }, props){
+    const { user } = route.params;
     const [data, setData] = useState([]);
 
     useFocusEffect(
@@ -45,25 +46,25 @@ function HomeScreen({ navigation }){
         }, [])
     );
 
+    function clickLogin(){
+        console.log("pressed")
+        props.onPressLogin();
+    }
+
     return(
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <ImageBackground source={require('../assets/wallpaper.jpg')} resizeMode="cover" style={styles.image} blurRadius={2}>
                 <Text style={styles.gameText}> Drapo Game </Text>
-                <TouchableOpacity
-                    style={styles.button.background}
-                    onPress={ () => navigation.navigate('Drapo Game',{
-                        data:data
-                    })} 
-                >
-                <Text style={styles.button.text}>JOUER</Text>
-                </TouchableOpacity>
+                    <TouchableOpacity
+                        style={styles.button.background}
+                        onPress={ () => navigation.navigate('Drapo Game',{
+                            data:data
+                        })} 
+                    >
+                        <Text style={styles.button.text}>JOUER</Text>
+                    </TouchableOpacity> 
             </ImageBackground>
-
-            {/* <Button style={styles.button}
-            title="JOUER"
-            onPress={() => navigation.navigate('Drapo Game')}
-            /> */}
-        </View>
+        </SafeAreaView>
     );
 }
 

@@ -4,21 +4,19 @@ import {View, Text} from "react-native";
 import styles from "./Timer.style";
 
 function Timer(props){
-  const [timer, setTimer] = useState(0);
   const id = useRef(null);
 
   const clear = () => {
-    console.log("clear")
     window.clearInterval(id.current); // On supprime le timer
     props.onFinish(); // Fait en sorte le compteur augmente
-    props.clearText();
+    props.resetTimer();
     createInterval(); // On recrée un timer
   }
 
   function createInterval(){
-    setTimer(11);
+    props.resetTimer(); 
     id.current = window.setInterval(() => {
-      setTimer((time) => time - 1);
+      props.setTimer((time) => time - 1);
     }, 1000)
   }
 
@@ -27,15 +25,15 @@ function Timer(props){
   }, [])
 
   useEffect(() => {
-    if (timer === 0) {
+    if (props.time === 0) {
       clear();
     }
-  }, [timer]);
+  }, [props.time]);
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>{timer} secondes</Text>
-      <Progress.Bar style={styles.progress} progress={(timer / 11)} width={200} height={10}/>
+      <Text style={styles.text}>{props.time} secondes</Text>
+      <Progress.Bar style={styles.progress} progress={(props.time / 5)} width={200} height={10}/>
     </View>
   );
 }

@@ -6,7 +6,7 @@ import stylesHome from "../Home.style";
 function FinishGame(props){
     return(
         <View style={styles.container}>
-            <Text style={[styles.fs21, styles.bold, styles.textTitle]}>Partie terminée !</Text>
+            <Text style={[styles.fs21, styles.bold, styles.textTitle, styles.textCenter, styles.textShadow]}>Partie terminée !</Text>
             <TouchableOpacity
                     style={stylesHome.button.background}
                     onPress={ () => props.navigation.navigate('Home')} 
