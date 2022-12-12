@@ -46,11 +46,6 @@ function HomeScreen({ route, navigation }, props){
         }, [])
     );
 
-    function clickLogin(){
-        console.log("pressed")
-        props.onPressLogin();
-    }
-
     return(
         <SafeAreaView style={styles.container}>
             <ImageBackground source={require('../assets/wallpaper.jpg')} resizeMode="cover" style={styles.image} blurRadius={2}>

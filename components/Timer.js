@@ -33,7 +33,7 @@ function Timer(props){
   return (
     <View style={styles.container}>
       <Text style={styles.text}>{props.time} secondes</Text>
-      <Progress.Bar style={styles.progress} progress={(props.time / 5)} width={200} height={10}/>
+      <Progress.Bar style={styles.progress} progress={(props.time / 30)} width={200} height={10}/>
     </View>
   );
 }

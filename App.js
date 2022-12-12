@@ -84,8 +84,7 @@ export default function App() {
           
           <Stack.Group>
             
-            <Stack.Screen name="Home" componentinitialParams={{ user: user }}>
-              {(props) => <HomeScreen {...props} LoginBtn={LoginBtn()}/>}
+            <Stack.Screen name="Home" component={HomeScreen} initialParams={{ user: user }}>
             </Stack.Screen>
             <Stack.Screen
               name="Drapo Game"
