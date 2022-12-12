@@ -65,7 +65,7 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
-    { user === null ?
+    {/* { user === null ?
 
     <SafeAreaView>
       <TouchableOpacity
@@ -78,7 +78,7 @@ export default function App() {
     </SafeAreaView>
 
 
-    :
+    : */}
       <NavigationContainer>
         <Stack.Navigator>
           
@@ -96,7 +96,7 @@ export default function App() {
           
         </Stack.Navigator>
       </NavigationContainer>
-      }
+      {/* } */}
     </SafeAreaProvider>
   );
 }
