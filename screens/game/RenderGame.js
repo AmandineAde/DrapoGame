@@ -23,6 +23,7 @@ function RenderGame(props){
             window.setTimeout(() => {
                 setNotification("")
             }, 3000)
+            
         }
     }
 
